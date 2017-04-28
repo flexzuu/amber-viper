@@ -48,6 +48,11 @@ public class Controller {
         return database != null;
     }
     public void quit(){
+        try {
+            database.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         System.exit(0);
     }
     public void toggleConnect(){
