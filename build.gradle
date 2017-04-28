@@ -1,0 +1,17 @@
+group 'de.thm.jfbr15'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    compile 'de.jensd:fontawesomefx-octicons:4.3.0-5'
+    compile 'org.postgresql:postgresql:42.0.0.jre7'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}

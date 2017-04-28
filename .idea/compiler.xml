@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="amber-viper_main" target="1.8" />
+      <module name="amber-viper_test" target="1.8" />
+      <module name="viper_main" target="1.8" />
+      <module name="viper_test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
