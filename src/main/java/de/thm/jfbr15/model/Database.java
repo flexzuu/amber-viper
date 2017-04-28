@@ -11,14 +11,22 @@ public class Database {
     public Database(String connectionURL, String user, String password) throws SQLException {
         try {
             Class.forName("org.postgresql.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection(connectionURL, user, password);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
 
     }
-    public ResultSet sendQuery(String query) throws SQLException {
-        return conn.createStatement().executeQuery(query);
+    public Result sendQuery(String query) throws SQLException {
+        Statement statement = conn.createStatement();
+        boolean wasQuery = statement.execute(query);
+        if (wasQuery) {
+            return new Result(statement.getResultSet());
+        } else {
+            return new Result(statement.getUpdateCount());
+        }
+
     }
     public void close() throws SQLException {
         conn.close();

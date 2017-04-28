@@ -1,8 +1,14 @@
+plugins {
+    id 'com.github.johnrengelman.shadow' version '1.2.4'
+}
 group 'de.thm.jfbr15'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'com.github.johnrengelman.shadow'
 
+mainClassName = "de.thm.jfbr15.gui.Main"
 sourceCompatibility = 1.8
 
 repositories {
@@ -13,5 +19,9 @@ repositories {
 dependencies {
     compile 'de.jensd:fontawesomefx-octicons:4.3.0-5'
     compile 'org.postgresql:postgresql:42.0.0.jre7'
+    // https://mvnrepository.com/artifact/commons-io/commons-io
+    compile group: 'commons-io', name: 'commons-io', version: '2.5'
+    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+    compile group: 'mysql', name: 'mysql-connector-java', version: '6.0.6'
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
